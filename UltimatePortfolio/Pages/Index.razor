@@ -1,0 +1,77 @@
+﻿@page "/"
+@inject IJSRuntime JSRuntime;
+
+<head>
+    <link rel="stylesheet" href="../css/main_page_style.css" />
+</head>
+
+<audio src="/sound/hover_app.wav" >
+</audio>
+
+<section class="main_page">
+    <div class="main_page_container">
+
+        <div class="desktop">
+            <div class="desktop_screen">
+
+                <div class="apps_grid">
+
+                    <div @onmouseover="PlaySound" class="app_icon internet">
+                        <div class="img_icon">
+                            <img src="../images/app_icons/internet.png" alt="internet" />
+                        </div>
+
+                        <div class="description">
+                            <p>Internet</p>
+                        </div>
+                    </div>
+
+                    <div @onmouseover="PlaySound" class="app_icon about">
+                        <div class="img_icon">
+                            <img src="../images/app_icons/about.png" alt="about" />
+                        </div>
+
+                        <div class="description">
+                            <p>About</p>
+                        </div>
+                    </div>
+
+                    <div @onmouseover="PlaySound" class="app_icon calculator">
+                        <div class="img_icon">
+                            <img src="../images/app_icons/calculator.png" alt="calculator" />
+                        </div>
+
+                        <div class="description">
+                            <p>Calculator</p>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div  class="bottom_panel">
+                    <div @onmouseover="PlaySound" class="system">
+                        <img src="../images/app_icons/bottom_panel_icon.png" alt="system" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+@code{
+
+    async Task PlaySound()
+    {
+        await JSRuntime.InvokeVoidAsync("PlayUISound");
+    }
+
+    async Task StopSound()
+    {
+        await JSRuntime.InvokeVoidAsync("StopUISound");
+
+    }
+}
+

@@ -1,0 +1,129 @@
+﻿.main_page {
+    min-height: 100vh;
+    width:100%;
+}
+
+
+.main_page .main_page_container{
+    display:flex;
+    width:100%;
+    min-height:100vh;
+    justify-content:center;
+    align-content:center;
+    align-items:center;
+}
+
+.main_page .desktop{
+    background-image:url('../images/3x/screen.png');
+    background-position:center;
+    background-size:contain;
+    background-repeat: no-repeat;
+    width:100%;
+    max-width:1400px;
+    height:900px;
+
+    position:relative;
+}
+
+.main_page .desktop_screen{
+    width: 100%;
+    max-width:1304px;
+    height: 684px;
+    position:absolute;
+    top: 36px;
+    left:52px;
+
+    background-image: url(../images/bacgrounds/1.jpg);
+    background-position:center;
+    background-size:cover;
+    background-repeat:no-repeat;
+}
+
+.desktop .desktop_screen .apps_grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+        "i"
+        "a"
+        "c";
+
+    grid-gap: 1em;
+    width:100%;
+    height:640px;
+    padding:2em;
+}
+
+
+
+.internet{
+    grid-area: i;
+}
+
+.about{
+    grid-area: a;
+}
+
+.calculator{
+    grid-area: c;
+}
+
+.desktop .app_icon {
+    transition: 0.5s;
+    cursor: pointer;
+    width: 150px;
+    height: 150px;
+    padding:0.5em;
+}
+
+.desktop .app_icon:hover {
+    background-color: rgba(200, 200, 200, 0.40);
+    border-radius: 40%;
+    transform: translateY(-3px);
+}
+
+.desktop .app_icon .img_icon {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.desktop .app_icon img{
+    width:110px;
+    height:110px;
+}
+
+.desktop .app_icon .description{
+    text-align:center;
+    padding:0.5em 0;
+    color:white;
+}
+
+
+/*Bottom panel*/
+.desktop .bottom_panel {
+    height: 44px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.60);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    padding: 0 1em;
+}
+
+.desktop .bottom_panel .system{
+    display: flex;
+    align-content: center;
+    align-items: center; 
+    justify-content:center;
+    width:40px;
+    transition:0.5s background-color;
+}
+
+.desktop .bottom_panel .system:hover{
+    background-color:rgba(193, 193, 193, 0.50);
+}
+
+.desktop .bottom_panel img{
+    width:auto;
+    height:30px;
+}
